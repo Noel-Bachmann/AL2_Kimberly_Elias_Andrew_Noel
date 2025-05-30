@@ -1,1 +1,13 @@
-/* CSS Code, der für alle Web Pages gleich ist und auf allen Web Pages eingebunden werden muss. */
+html,
+body {
+  background-color: #fff;
+  margin: 0;
+}
+
+.d-none {
+  display: none;
+}
+
+.show {
+  display: block;
+}

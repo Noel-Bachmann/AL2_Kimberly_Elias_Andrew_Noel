@@ -1,0 +1,34 @@
+.error-message {
+  color: red;
+  font-size: 0.9em;
+}
+
+.count-ok {
+  color: green;
+}
+
+.count-warn {
+  color: orange;
+}
+
+.count-error {
+  color: red;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #007bff;
+  width: 0;
+  transition: width 0.1s;
+}
+
+.btn {
+  background-color: var(#007bff);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
