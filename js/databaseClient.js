@@ -7,8 +7,8 @@ Lesen Sie alle Kommentare.
 */
 
 // Ändern Sie die folgenden beiden Werte, um ihre Datenbank zu verbinden.
-const GROUP_NAME = "teacher";
-const PASSWORD = "vf9bm0k4uoji7o4b";
+const GROUP_NAME = "al2";
+const PASSWORD = "excj5fryj6o75ebu";
 
 const SERVER_URL = "https://ict-290.herokuapp.com/sql";
 const databaseClient = {
@@ -18,6 +18,7 @@ const databaseClient = {
       pw: PASSWORD,
       sql: sql,
     };
+    console.log("payload", payload);
     try {
       const response = await fetch(SERVER_URL, {
         headers: {
@@ -67,11 +68,13 @@ const databaseClient = {
 Den folgenden Code demonstriert die Verwendung von executeSqlQuery und insertInto. 
 */
 const testRun = async () => {
-  const users = await databaseClient.executeSqlQuery("SELECT * FROM users");
+  const requests = await databaseClient.executeSqlQuery(
+    "SELECT * FROM requests"
+  );
   // Das erste Element result[0] enthält Meta Informationen der Datenbank, das lassen wir weg. Die eigentlichen Daten sind in result[1]
-  console.log(users[1]);
+  console.log(requests[1]);
 
-  await databaseClient.insertInto("users", {
+  await databaseClient.insertInto("requests", {
     name: "myName",
     email: "myEmailAddress",
   });
