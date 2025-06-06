@@ -5,7 +5,7 @@ const startBtn = document.getElementById("startBtn");
 const pauseBtn = document.getElementById("pauseBtn");
 const hearts = document.getElementById("hearts");
 const game = document.getElementById("game");
-
+ 
 let animationId;
 let gameInterval;
 let backgroundPositionX = 0;
@@ -13,17 +13,17 @@ let running = false;
 let currentScore = 0;
 let lives = 3;
 let isInvincible = false;
-
+ 
 function updateHearts() {
   hearts.innerText = "❤️".repeat(lives);
 }
-
+ 
 function jump() {
   if (dino.classList.contains("jumping")) return;
-
+ 
   dino.classList.add("jumping");
   dino.style.bottom = "60%";
-
+ 
   setTimeout(() => {
     dino.style.bottom = "0";
     setTimeout(() => {
@@ -31,32 +31,28 @@ function jump() {
     }, 300);
   }, 300);
 }
-
+ 
 function startGame() {
   if (running) return;
   running = true;
-
+ 
   rock.style.animation = "none";
   rock.offsetHeight;
   rock.style.animation = `rock 1.5s linear infinite`;
   rock.style.animationPlayState = "running";
-
+ 
   gameInterval = setInterval(() => {
-    const dinoBottom = parseInt(
-      window.getComputedStyle(dino).getPropertyValue("bottom")
-    );
-    const rockLeft = parseInt(
-      window.getComputedStyle(rock).getPropertyValue("left")
-    );
-
+    const dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
+    const rockLeft = parseInt(window.getComputedStyle(rock).getPropertyValue("left"));
+ 
     currentScore++;
     score.innerText = currentScore;
-
+ 
     if (rockLeft < 75 && rockLeft > 0 && dinoBottom < 50 && !isInvincible) {
       lives--;
       updateHearts();
       isInvincible = true;
-
+ 
       if (lives <= 0) {
         endGame();
       } else {
@@ -67,10 +63,10 @@ function startGame() {
       }
     }
   }, 50);
-
+ 
   animateBackground();
 }
-
+ 
 function animateBackground() {
   backgroundPositionX -= 2;
   game.style.backgroundPosition = `${backgroundPositionX}px bottom`;
@@ -78,7 +74,7 @@ function animateBackground() {
     animationId = requestAnimationFrame(animateBackground);
   }
 }
-
+ 
 function pauseGame() {
   if (!running) return;
   clearInterval(gameInterval);
@@ -86,15 +82,15 @@ function pauseGame() {
   running = false;
   rock.style.animationPlayState = "paused";
 }
-
+ 
 function endGame() {
   let message = `Spiel vorbei! Du hattest ${currentScore} Punkte.`;
   if (currentScore >= 300) {
     message += `\n\n🎉 Glückwunsch! Du bekommst den Rabattcode "Winner20!" für 20% beim nächsten Einkauf.`;
   }
-
+ 
   alert(message);
-
+ 
   clearInterval(gameInterval);
   cancelAnimationFrame(animationId);
   running = false;
@@ -108,7 +104,7 @@ function endGame() {
   game.style.backgroundPosition = `0px bottom`;
   resetRock();
 }
-
+ 
 function resetRock() {
   rock.style.animation = "none";
   rock.offsetHeight;
@@ -116,7 +112,7 @@ function resetRock() {
   rock.style.animation = `rock 1.5s linear infinite`;
   rock.style.animationPlayState = running ? "running" : "paused";
 }
-
+ 
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space" || event.code === "ArrowUp") {
     if (!running) {
@@ -127,9 +123,9 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
   }
 });
-
+ 
 startBtn.addEventListener("click", startGame);
 pauseBtn.addEventListener("click", pauseGame);
-
+ 
 updateHearts();
 rock.style.animationPlayState = "paused";
