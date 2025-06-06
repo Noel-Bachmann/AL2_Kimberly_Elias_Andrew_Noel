@@ -15,7 +15,37 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7O2l1gqgVuIQtqDUZClBhvz3cZz3OwogdbD"
       crossorigin="anonymous"
     ></script>
-    <link href="./css/common.css" rel="stylesheet" />
+    <style>
+      /* Hero Section Styles */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/Test%20Drive%20Unlimited%20Solar%20Crown_Deluxe%20gaming.png?raw=true");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 8rem 0;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .hero h1 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .carousel-caption-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      #progressBar {
+        transition: width 0.1s ease;
+      }
+    </style>
   </head>
   <body>
     <header
@@ -52,27 +82,46 @@
       style="height: 4px; width: 0%; z-index: 1000"
     ></div>
 
-    <div class="container mt-5">INDEX</div>
-
     <!-- Hero Section -->
     <section class="hero">
-      <h1 class="display-2">Willkommen zu Deluxe Gaming</h1>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-3 fw-bold mb-4">Willkommen zu Deluxe Gaming</h1>
+            <p class="lead mb-5">
+              Dein Premium-Destination für Gaming-Erlebnisse der Extraklasse
+            </p>
+            <a href="#products" class="btn btn-primary btn-lg px-4 me-2"
+              >Angebote entdecken</a
+            >
+            <a href="game.html" class="btn btn-outline-light btn-lg px-4"
+              >Game</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Text and Image Section -->
+    <!-- Rest of your existing content remains the same -->
     <section class="container py-5">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <h2>Section Title</h2>
+          <h2>
+            Bei Deluxe Gaming profitierst du von zahlreichen Aktionen, Rabatten
+            und exklusiven Angeboten.
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
-            orci nec justo tincidunt tincidunt.
+            Egal, ob du nach den neuesten Games, leistungsstarker Hardware oder
+            stylischem Zubehör suchst – bei uns findest du alles, was das
+            Gamer-Herz begehrt. Entdecke regelmässig wechselnde Deals, sichere
+            dir Vorbesteller-Boni und werde Teil unserer Community für echte
+            Gaming-Fans.
           </p>
         </div>
         <div class="col-md-6">
           <img
-            src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
-            class="img-fluid"
+            src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/Test%20Drive%20Unlimited%20Solar%20Crown_Deluxe%20gaming.png?raw=true"
+            class="img-fluid rounded shadow"
             alt="Section Image"
           />
         </div>
@@ -80,7 +129,7 @@
     </section>
 
     <!-- Carousel Section -->
-    <section class="container pb-5">
+    <section class="container pb-5" id="products">
       <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <!-- Slide 1 -->
@@ -89,36 +138,36 @@
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://assets-prd.ignimgs.com/2023/12/18/gtakey-1702926695870.png"
+                    src="https://raw.githubusercontent.com/Andr3w-a/Bilder-Datenbank/refs/heads/main/Assassins%20Creed%20Shadows_Deluxe%20Gaming.png"
                     class="d-block w-100"
                     alt="Image 1"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 1</h5>
+                    <h5>Assassins Creed Shadows</h5>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                    src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/COD%20Black%20Ops%206%20Cross-gen%20Bundle_Deluxe%20gaming.png?raw=true"
                     class="d-block w-100"
                     alt="Image 2"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 2</h5>
+                    <h5>Call of Duty Black Ops 6</h5>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://assets-prd.ignimgs.com/2023/12/18/gtakey-1702926695870.png"
+                    src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/EA%20FC%2025_Deluxe%20Gaming.png?raw=true"
                     class="d-block w-100"
                     alt="Image 3"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 3</h5>
+                    <h5>EA FC 25</h5>
                   </div>
                 </div>
               </div>
@@ -131,36 +180,36 @@
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://via.placeholder.com/400x300"
+                    src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/Empire%20of%20Ants_Deluxe%20gaming.png?raw=true"
                     class="d-block w-100"
                     alt="Image 4"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 4</h5>
+                    <h5>Empire of the Ants</h5>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://via.placeholder.com/400x300"
+                    src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/Fortnite%20Transformesrs%20Pack_Deluxe%20Gaming.png?raw=true"
                     class="d-block w-100"
                     alt="Image 5"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 5</h5>
+                    <h5>Fortnite Transformers Pack</h5>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="position-relative">
                   <img
-                    src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                    src="https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/God%20of%20War%20Ragnaroek%20Digital%20Deluxe%20Edition_Deluxe%20gaming.png?raw=true"
                     class="d-block w-100"
                     alt="Image 6"
                   />
                   <div class="carousel-caption-left text-white">
-                    <h5>Caption 6</h5>
+                    <h5>God of War Ragnak</h5>
                   </div>
                 </div>
               </div>
