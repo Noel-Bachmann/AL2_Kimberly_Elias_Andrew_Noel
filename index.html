@@ -10,32 +10,201 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7O2l1gqgVuIQtqDUZClBhvz3cZz3OwogdbD" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7O2l1gqgVuIQtqDUZClBhvz3cZz3OwogdbD"
+      crossorigin="anonymous"
+    ></script>
     <link href="./css/common.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img class="px-4" src="TODO_IMG_SOURCE.jpg" alt="Firmenlogo" height="30" />
+    <header
+      class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      >
+        <img
+          class="px-4"
+          src="TODO_IMG_SOURCE.jpg"
+          alt="Firmenlogo"
+          height="30"
+        />
       </a>
       <ul class="mx-5 nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </li>
         <li class="nav-item"><a href="bau.html" class="nav-link">Bau</a></li>
         <li class="nav-item"><a href="game.html" class="nav-link">Game</a></li>
-        <li class="nav-item"><a href="kontakt.html" class="nav-link" aria-current="page">Kontakt</a></li>
+        <li class="nav-item">
+          <a href="kontakt.html" class="nav-link" aria-current="page"
+            >Kontakt</a
+          >
+        </li>
       </ul>
     </header>
 
-    <div id="progressBar" class="position-fixed top-0 start-0 bg-primary" style="height: 4px; width: 0%; z-index: 1000"></div>
+    <div
+      id="progressBar"
+      class="position-fixed top-0 start-0 bg-primary"
+      style="height: 4px; width: 0%; z-index: 1000"
+    ></div>
 
     <div class="container mt-5">INDEX</div>
 
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="display-2">Willkommen zu Deluxe Gaming</h1>
+    </section>
+
+    <!-- Text and Image Section -->
+    <section class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Section Title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+            orci nec justo tincidunt tincidunt.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+            class="img-fluid"
+            alt="Section Image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="container pb-5">
+      <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://assets-prd.ignimgs.com/2023/12/18/gtakey-1702926695870.png"
+                    class="d-block w-100"
+                    alt="Image 1"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 1</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                    class="d-block w-100"
+                    alt="Image 2"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 2</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://assets-prd.ignimgs.com/2023/12/18/gtakey-1702926695870.png"
+                    class="d-block w-100"
+                    alt="Image 3"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 3</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://via.placeholder.com/400x300"
+                    class="d-block w-100"
+                    alt="Image 4"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 4</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://via.placeholder.com/400x300"
+                    class="d-block w-100"
+                    alt="Image 5"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 5</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="position-relative">
+                  <img
+                    src="https://images.steamusercontent.com/ugc/2492263047661278222/5ADAFA3978F01C721F8F5E239028B3474F08851D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                    class="d-block w-100"
+                    alt="Image 6"
+                  />
+                  <div class="carousel-caption-left text-white">
+                    <h5>Caption 6</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#imageCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#imageCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
     <footer class="py-3">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-        <li class="nav-item"><a href="bau.html" class="nav-link px-2 text-body-secondary">Bau</a></li>
-        <li class="nav-item"><a href="game.html" class="nav-link px-2 text-body-secondary">Game</a></li>
-        <li class="nav-item"><a href="kontakt.html" class="nav-link px-2 text-body-secondary">Kontakt</a></li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link px-2 text-body-secondary"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="bau.html" class="nav-link px-2 text-body-secondary">Bau</a>
+        </li>
+        <li class="nav-item">
+          <a href="game.html" class="nav-link px-2 text-body-secondary">Game</a>
+        </li>
+        <li class="nav-item">
+          <a href="kontakt.html" class="nav-link px-2 text-body-secondary"
+            >Kontakt</a
+          >
+        </li>
       </ul>
       <p class="text-center text-body-secondary">© 2025 Gruppe 4 - Frontend</p>
     </footer>
