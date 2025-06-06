@@ -1,0 +1,24 @@
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://github.com/Andr3w-a/Bilder-Datenbank/blob/main/Test%20Drive%20Unlimited%20Solar%20Crown_Deluxe%20gaming.png?raw=true");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-caption-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
