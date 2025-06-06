@@ -1,135 +1,134 @@
-const dino = document.getElementById("dino");
-const rock = document.getElementById("rock");
-const score = document.getElementById("score");
-const startBtn = document.getElementById("startBtn");
-const pauseBtn = document.getElementById("pauseBtn");
-const hearts = document.getElementById("hearts");
-const game = document.getElementById("game");
-
-let animationId;
-let gameInterval;
-let backgroundPositionX = 0;
-let running = false;
-let currentScore = 0;
-let lives = 3;
-let isInvincible = false;
-
-function updateHearts() {
-  hearts.innerText = "❤️".repeat(lives);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-function jump() {
-  if (dino.classList.contains("jumping")) return;
-
-  dino.classList.add("jumping");
-  dino.style.bottom = "60%";
-
-  setTimeout(() => {
-    dino.style.bottom = "0";
-    setTimeout(() => {
-      dino.classList.remove("jumping");
-    }, 300);
-  }, 300);
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f0f0;
 }
 
-function startGame() {
-  if (running) return;
-  running = true;
-
-  rock.style.animation = "none";
-  rock.offsetHeight;
-  rock.style.animation = `rock 1.5s linear infinite`;
-  rock.style.animationPlayState = "running";
-
-  gameInterval = setInterval(() => {
-    const dinoBottom = parseInt(
-      window.getComputedStyle(dino).getPropertyValue("bottom")
-    );
-    const rockLeft = parseInt(
-      window.getComputedStyle(rock).getPropertyValue("left")
-    );
-
-    currentScore++;
-    score.innerText = currentScore;
-
-    if (rockLeft < 75 && rockLeft > 0 && dinoBottom < 50 && !isInvincible) {
-      lives--;
-      updateHearts();
-      isInvincible = true;
-
-      if (lives <= 0) {
-        endGame();
-      } else {
-        resetRock();
-        setTimeout(() => {
-          isInvincible = false;
-        }, 1000);
-      }
-    }
-  }, 50);
-
-  animateBackground();
+#controls {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: relative;
 }
 
-function animateBackground() {
-  backgroundPositionX -= 2;
-  game.style.backgroundPosition = `${backgroundPositionX}px bottom`;
-  if (running) {
-    animationId = requestAnimationFrame(animateBackground);
+button {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#hearts {
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+@media (max-width: 600px) {
+  #hearts {
+    position: relative;
+    right: auto;
+    top: auto;
+    order: 3;
+    margin-top: 10px;
   }
 }
 
-function pauseGame() {
-  if (!running) return;
-  clearInterval(gameInterval);
-  cancelAnimationFrame(animationId);
-  running = false;
-  rock.style.animationPlayState = "paused";
+#game {
+  width: 90vw;
+  max-width: 600px;
+  height: 40vh;
+  max-height: 300px;
+  margin: auto;
+  border: 2px solid black;
+  background-image: url("https://thumbs.dreamstime.com/b/stadt-spiel-hintergrund-71085139.jpg");
+  background-size: cover;
+  background-position: 0 bottom;
+  position: relative;
+  overflow: hidden;
 }
 
-function endGame() {
-  let message = `Spiel vorbei! Du hattest ${currentScore} Punkte.`;
-  if (currentScore >= 300) {
-    message += `\n\n🎉 Glückwunsch! Du bekommst den Rabattcode "Winner20!" für 20% beim nächsten Einkauf.`;
+#dino {
+  width: 15vw;
+  max-width: 75px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  background-image: url("https://wallpapers.com/images/hd/minecraft-character-running-0lostva92h9hypfh.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: bottom 0.3s ease-in-out;
+}
+
+#rock {
+  width: 10vw;
+  max-width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  background-image: url("https://github.com/kriscfoster/chrome-dino-game/blob/master/rock.png?raw=true");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: rock 1.5s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes rock {
+  0% {
+    left: 100%;
   }
-
-  alert(message);
-
-  clearInterval(gameInterval);
-  cancelAnimationFrame(animationId);
-  running = false;
-  rock.style.animationPlayState = "paused";
-  currentScore = 0;
-  lives = 3;
-  isInvincible = false;
-  score.innerText = "0";
-  updateHearts();
-  backgroundPositionX = 0;
-  game.style.backgroundPosition = `0px bottom`;
-  resetRock();
-}
-
-function resetRock() {
-  rock.style.animation = "none";
-  rock.offsetHeight;
-  rock.style.left = "100%";
-  rock.style.animation = `rock 1.5s linear infinite`;
-  rock.style.animationPlayState = running ? "running" : "paused";
-}
-
-document.addEventListener("keydown", (event) => {
-  if (event.code === "Space" || event.code === "ArrowUp") {
-    if (!running) {
-      startGame();
-    } else {
-      jump();
-    }
-    event.preventDefault();
+  100% {
+    left: -10%;
   }
-});
+}
 
-startBtn.addEventListener("click", startGame);
-pauseBtn.addEventListener("click", pauseGame);
+#score {
+  font-size: 24px;
+  margin-top: 20px;
+}
 
-updateHearts();
-rock.style.animationPlayState = "paused";
+#instructions {
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 700px;
+  background-color: #fffbe6;
+  border: 1px solid #ffd966;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#instructions h2 {
+  margin-bottom: 10px;
+  color: #d35400;
+}
+
+#instructions p {
+  font-size: 16px;
+  color: #333;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+}
