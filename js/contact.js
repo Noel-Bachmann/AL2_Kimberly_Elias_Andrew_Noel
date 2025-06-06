@@ -88,15 +88,13 @@ form.addEventListener("submit", function (e) {
       .insertInto("requests", formData)
       .then(() => {})
       .finally(() => {
-        setTimeout(() => {
-          document.getElementById("submitSave").classList.add("d-none");
-          document.getElementById("submitLabel").classList.remove("d-none");
-          document.getElementById("submitButton").disabled = false;
-          form.reset();
-          charCount.textContent = "0 / 200";
-          charCount.className = "";
-          showToast();
-        }, 3000);
+        document.getElementById("submitSave").classList.add("d-none");
+        document.getElementById("submitLabel").classList.remove("d-none");
+        document.getElementById("submitButton").disabled = false;
+        form.reset();
+        charCount.textContent = "0 / 200";
+        charCount.className = "";
+        showToast();
       });
   }
 });
